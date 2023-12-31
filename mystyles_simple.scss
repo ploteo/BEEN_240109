@@ -1,0 +1,336 @@
+/*-- scss:defaults --*/
+// Custom colors and variables
+
+$palette1: rgb(70, 70, 70); /* text */
+$palette2: rgb(184, 13, 72); /*header 1 */
+$palette3: rgb(43, 106, 108); /*header 2 */
+$palette4: rgb(241, 208, 43); /*decorations */
+$highlight: rgb(242, 151, 36); /*highlight */
+$censored: rgb(148, 148, 148);
+$accent: rgb(199, 0, 209); /* link */
+
+
+$right-arrow: "\2192"; // Unicode character for right arrow
+$bullet: "\2010"; // Unicode character for hyphenation dash
+
+
+// GENERAL
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Lato:wght@100;300;400;700&family=Noto+Sans:wght@100;300;400;500&family=Open+Sans:wght@700&family=Pacifico&family=Roboto+Condensed:wght@100;200;300;400&family=Urbanist:wght@300&display=swap');
+
+
+
+$font-family-sans-serif: 'Lato', sans-serif;
+// $presentation-font-size-root: 36px;
+$presentation-font-weight: 300;
+
+$presentation-heading-font: 'Lato', sans-serif;//'Pacifico', cursive;//
+// $presentation-heading-color: $palette1 !default;
+$presentation-heading-font-weight: 500;
+$presentation-heading-line-height: 1;
+$presentation-block-margin: 28px;
+
+// colors
+
+//$body-bg: #f0f1eb !default;
+$body-color: $palette1 !default;
+$background-color: "white" !default;
+$link-color: $palette4 !default;
+$selection-bg: #26351c !default;
+
+// math
+
+.math.inline .MathJax {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 80% !important;
+    font-weight: normal
+}
+
+.math.display .MathJax {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 80% !important;
+    padding: 0px 0px;
+    margin-bottom: 0px;
+    font-weight: normal
+}
+
+// line height
+
+.reveal a {
+    line-height: 1.3em;
+}
+
+.reveal p {
+    font-weight: 300;
+    margin-top: 0em;
+    // margin-top: 1.25em;
+}
+
+// title and headings
+
+
+#title-slide {
+
+
+    .title {
+        color: $palette2;
+        font-size: 2.4em;
+        font-weight: $presentation-heading-font-weight;
+        font-family: $presentation-heading-font;
+    }
+
+    .subtitle {
+        color: $palette3;
+        font-size: 1.4em;
+        font-style: italic;
+    }
+
+    .institute,
+    .quarto-title-affiliation,
+    .quarto-title-author-email {
+        font-style: italic;
+        font-size: .6em;
+    color: $palette3;
+    }
+
+    .author,
+    .quarto-title-author-name {
+        margin-top: 50px;
+    color: $palette3;
+    font-weight: $presentation-heading-font-weight;
+
+    }
+
+    .author,
+    .quarto-title-email {
+        margin-top: 200px;
+        color: $palette3;
+        font-weight: $presentation-heading-font-weight;
+
+    }
+
+    .quarto-title-authors {
+        display: flex;
+        justify-content: left;
+
+        .quarto-title-author {
+            padding-left: 0em;
+            padding-right: 0em;
+            width: 100%;
+        }
+    }
+
+    .date {
+        margin-top: 50px;
+        font-size: 80%;
+        color: $palette1;
+    }
+}
+
+// slides
+
+.reveal .slides {
+font-weight: 300;
+font-size: 90%;
+font-family: $font-family-sans-serif;
+color: $body-color;
+background-color: $background-color;
+
+}
+
+// headers
+
+.reveal h1 {
+    font-variant: small-caps;
+    font-size: 250% !important;
+    text-align: center;
+    color: $palette2 !important;
+    font-weight: $presentation-heading-font-weight;
+    font-family: $presentation-heading-font;
+}
+
+.reveal h2 {
+    font-size: 150% !important;
+    color: $palette3 !important;
+    font-weight: $presentation-heading-font-weight;
+    font-family: $presentation-heading-font;
+    line-height: $presentation-heading-line-height;
+    padding-bottom: -40px;
+    margin-bottom: -40px;
+    margin-top: -2.25em;
+
+
+}
+
+.reveal h3 {
+    color: $palette4 !important;
+    font-style: italic;
+    font-size: 100% !important;
+}
+
+.reveal h4 {
+    margin-top: 1.25em;
+}
+
+// text styles
+
+.caption {
+    color:$censored;
+    text-align: center;
+}
+
+// alerts etc.
+
+.alert {
+    color: $highlight;
+    font-weight: 400;
+    // color: $accent2;
+}
+
+.censored {
+    color: $censored;
+    font-weight: 400;
+    // color: $accent2;
+}
+
+// background
+
+.fg {
+    color: var(--col, $palette1);
+}
+
+.bg {
+    background-color: var(--col, #fff);
+    padding: 0.1em;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+// lists
+
+// Ordered lists
+
+.reveal ul {
+    font-weight: 300;
+    // padding: 0px -10px;
+    padding-left: 16px;
+    font-size: 95%;
+   
+
+    li::marker {
+        color: mix($accent, white, 70%);
+        color: $palette2;
+    }
+
+    li {
+        padding: 0px 0px 0px 0px;
+        margin-bottom: 0%;
+    }
+
+    }
+
+
+// Unordered lists
+
+
+// Beamer-style button link environment
+
+.button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: $accent;
+    border: 1px solid $accent;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.button::before {
+    content: "▶";
+    font-size:60%;
+    margin-right: 5px;
+}
+
+// DECORATIONS
+
+.reveal .slide-menu-button {
+    position: fixed;
+    top: 12px;
+    left: 24px;
+    bottom: unset;
+    right: unset;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.slide-number,
+.reveal.has-logo .slide-number {
+    bottom: 10px !important;
+    right: 15px !important;
+    top: unset !important;
+    color: $palette4 !important;
+}
+
+.reveal .progress {
+    position: fixed;
+    height: 6px;
+    width: 100%;
+    margin-bottom: 0em;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: $palette4 !important;
+}
+
+.reveal .slide-logo {
+    display: block;
+    position: fixed;
+    bottom:5px !important;
+    left: 5px !important;
+    top: unset;
+    right: unset;
+    height: 43px !important;
+    width: 140px !important;
+    max-width: unset !important;
+    max-height: unset !important;
+}
+
+
+.reveal .controls {
+    color: $palette4 !important;
+}
+
+// a box 
+.box {
+    border: 4px solid $palette3;
+    background-color: $highlight;
+    color: #0090ff;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10pX 10px 10px 10px;
+}
+
+// render citations
+ 
+.citation {
+    font-size: 0.6em;
+    font-style: italic;
+    color: $palette1;
+}
+

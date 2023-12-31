@@ -1,0 +1,188 @@
+---
+title: "DEMO"
+subtitle: "Slides"
+author:
+  - name: Matteo Ploner
+    email: matteo.ploner@unitn.it
+    affiliations: DEM, University of Trento
+  # - name: 
+  #   email: 
+  # - name: 
+  #   email:
+date: today
+date-format: "MMMM YYYY"
+title-slide-attributes:
+    #data-background-image: /CGP_irvapp_files/forest.png
+    data-background-color: "white"
+    data-background-size: contain
+    data-background-opacity: "0.8"
+format:
+  revealjs:
+
+    slide-number: c/t
+    margin: 0.1
+    center: false
+    toc: true # table of content true
+    toc-depth: 1
+    controls: true
+    chalkboard: false
+    transition: slide
+    background-transition: fade
+    navigation-mode: vertical
+    controls-tutorial: true
+    scrollable: true
+    logo: unitn_logo.png
+    menu:
+      side: left
+    footer: <span style="color:rgb(184, 156, 14);"> Matteo Ploner </span>
+    theme: ./mystyles_simple.scss
+html:
+  embed-resources: true
+  toc: true # table of content true
+
+editor: visual
+# https://quarto.org/docs/presentations/revealjs/index.html
+# https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/demo/index.qmd
+#https://grantmcdermott.com/quarto-revealjs-clean-demo/template.html#/example-slide
+#https://quarto.org/docs/extensions/listing-revealjs.html
+---
+
+## Resources
+
+- [Source](https://quarto.org/docs/presentations/revealjs/index.html)
+- [Guide](https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/demo/index.qmd)
+
+# Demo slides
+
+## Nested
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+- Ut et ante scelerisque, eleifend est in, consectetur enim. 
+  - Duis malesuada erat et odio porttitor, nec maximus ligula pharetra. 
+    - Aliquam sed erat enim. Integer tortor libero, maximus non eros ut, pulvinar accumsan dui. 
+- Nulla ac tempor sem. Nam dignissim mi at massa pharetra vulputate. 
+- Vestibulum porta magna ipsum, eu efficitur mi ultricies sit amet. 
+  - Sed pulvinar, odio id venenatis rutrum, mi ex fringilla purus, vel efficitur est justo et tellus. 
+    - Etiam varius augue lobortis tempor suscipit. Duis dictum ligula et orci fringilla, ut ullamcorper nibh cursus. 
+
+
+## Two columns
+
+::: columns
+::: {.column width="40%"}
+### Column 1
+
+-   line 1
+:::
+
+::: {.column width="60%"}
+### Column 2
+
+-   line 2
+:::
+:::
+
+## Math
+
+Inline math: $x^2 + y^2 = z^2$ and $e^{i\pi} + 1 = 0$
+
+Display math: $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
+
+
+- This [is important]{.alert}
+
+## Graphs
+
+```{r}
+library(ggplot2)
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+## Incremental Lists
+
+Lists can optionally be displayed incrementally:
+
+::: incremental
+-   First item
+    -   First subitem
+-   Second item
+-   Third item
+:::
+
+## Fragments
+
+Incremental text display and animation with fragments:
+
+<br/>
+
+::: {.fragment .fade-in}
+Fade in
+:::
+
+::: {.fragment .fade-up}
+Slide up while fading in
+:::
+
+::: {.fragment .fade-left}
+Slide left while fading in
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+Fade in then semi out
+:::
+
+. . .
+
+::: {.fragment .strike}
+Strike
+:::
+
+::: {.fragment .highlight-red}
+Highlight red
+:::
+
+## Absolute Position
+
+Position images or other elements at precise locations
+
+![](./img/paperino.png){.absolute top="50" left="0" width="200"}
+
+![](./img/quiquoqua.png){.absolute top="50" right="0" width="200"}
+
+![](./img/ziopaperone.png){.absolute bottom="0" right="0" width="200"}
+
+## Pretty Code {auto-animate="true"}
+
+-   Over 20 syntax highlighting themes available
+-   Default theme optimized for accessibility
+
+``` r
+# Define a server for the Shiny app
+function(input, output) {
+  
+  # Fill in the spot we created for a plot
+  output$phonePlot <- renderPlot({
+    # Render a barplot
+    barplot(WorldPhones[,input$region]*1000, 
+            main=input$region,
+            ylab="Number of Telephones",
+            xlab="Year")
+  })
+}
+```
+
+## Aside 
+
+- Main slide
+
+::: aside
+Comment
+
+:::
+
+## Embed Wooclap
+
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/CDMJAQ/questions/6503fb21901af3cae2f184f1" width="100%"></iframe>
+
