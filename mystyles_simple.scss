@@ -4,7 +4,7 @@
 $palette1: rgb(70, 70, 70); /* text */
 $palette2: rgb(184, 13, 72); /*header 1 */
 $palette3: rgb(43, 106, 108); /*header 2 */
-$palette4: rgb(241, 208, 43); /*decorations */
+$palette4: rgb(255, 192, 12); /*decorations */
 $highlight: rgb(242, 151, 36); /*highlight */
 $censored: rgb(148, 148, 148);
 $accent: rgb(199, 0, 209); /* link */
@@ -27,14 +27,14 @@ $presentation-font-weight: 300;
 
 $presentation-heading-font: 'Lato', sans-serif;//'Pacifico', cursive;//
 // $presentation-heading-color: $palette1 !default;
-$presentation-heading-font-weight: 500;
+$presentation-heading-font-weight: 600;
 $presentation-heading-line-height: 1;
 $presentation-block-margin: 28px;
 
 // colors
 
 //$body-bg: #f0f1eb !default;
-$body-color: $palette1 !default;
+$body-color: $palette3 !default;
 $background-color: "white" !default;
 $link-color: $palette4 !default;
 $selection-bg: #26351c !default;
@@ -62,7 +62,7 @@ $selection-bg: #26351c !default;
 }
 
 .reveal p {
-    font-weight: 300;
+    font-weight: $presentation-font-weight;
     margin-top: 0em;
     // margin-top: 1.25em;
 }
@@ -72,8 +72,7 @@ $selection-bg: #26351c !default;
 
 #title-slide {
 
-
-    .title {
+   h1.title {
         color: $palette2;
         font-size: 2.4em;
         font-weight: $presentation-heading-font-weight;
@@ -91,13 +90,13 @@ $selection-bg: #26351c !default;
     .quarto-title-author-email {
         font-style: italic;
         font-size: .6em;
-    color: $palette3;
+    color: $palette2;
     }
 
     .author,
     .quarto-title-author-name {
         margin-top: 50px;
-    color: $palette3;
+    color: $palette2;
     font-weight: $presentation-heading-font-weight;
 
     }
@@ -131,7 +130,7 @@ $selection-bg: #26351c !default;
 // slides
 
 .reveal .slides {
-font-weight: 300;
+font-weight: $presentation-font-weight;
 font-size: 90%;
 font-family: $font-family-sans-serif;
 color: $body-color;
@@ -141,18 +140,20 @@ background-color: $background-color;
 
 // headers
 
+
 .reveal h1 {
     font-variant: small-caps;
     font-size: 250% !important;
     text-align: center;
-    color: $palette2 !important;
+    color: $palette3 !important;
     font-weight: $presentation-heading-font-weight;
     font-family: $presentation-heading-font;
 }
 
 .reveal h2 {
     font-size: 150% !important;
-    color: $palette3 !important;
+    color: $palette2 !important;
+    text-align: center;
     font-weight: $presentation-heading-font-weight;
     font-family: $presentation-heading-font;
     line-height: $presentation-heading-line-height;
@@ -164,9 +165,12 @@ background-color: $background-color;
 }
 
 .reveal h3 {
-    color: $palette4 !important;
+    color: $palette1 !important;
+    text-align: center;
     font-style: italic;
     font-size: 100% !important;
+        padding-bottom: -40px;
+            margin-bottom: -40px;
 }
 
 .reveal h4 {
@@ -212,7 +216,7 @@ background-color: $background-color;
 // Ordered lists
 
 .reveal ul {
-    font-weight: 300;
+    font-weight: $presentation-font-weight;
     // padding: 0px -10px;
     padding-left: 16px;
     font-size: 95%;
@@ -220,7 +224,7 @@ background-color: $background-color;
 
     li::marker {
         color: mix($accent, white, 70%);
-        color: $palette2;
+        color: $palette3;
     }
 
     li {
@@ -277,6 +281,7 @@ background-color: $background-color;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+    color: $palette4 !important;
 }
 
 .slide-number,
@@ -331,6 +336,17 @@ background-color: $background-color;
 .citation {
     font-size: 0.6em;
     font-style: italic;
-    color: $palette1;
+    color: $palette4;
 }
 
+
+.div-left {
+    float: left;
+    padding: 20px;
+}
+
+.div-right {
+    float: right;
+    padding: 20px;
+
+}
